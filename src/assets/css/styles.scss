@@ -1,0 +1,210 @@
+// --------------------------------------------------
+// Notes
+//
+// - I used Parcel v2 as web application bundler
+// - I used normalize.css for better cross-browsers consistency 
+// - I used pixels values from Zeplin and changed them to `rem`
+// - I used BEM methodology for naming classes and HTML organization
+// - For future reference, I used variables for colors
+// - I optimized the assets you provided even more https://cloudup.com/cbuIEM_MeO7+
+// - I optimized and clean up the SVGs: logo and social icons
+// - I took the liberty to add multiple breakpoints (768px and 1024px) because
+//   the transition between mobile and desktop was not really nice
+// - I tested on latest Firefox, Safari, Chrome, Brave, Internet Explorer 11 and
+//   on mobile iOS Safari (iPhone 8 to 12 Pro Max), Chrome 88.0.4324.11, Samsung
+//   Internet Browser 13.2.2.4 on Samsung Galaxy S8
+// - I separated some scss files, I guess I could have separated components even
+//   more but this is quite a small project to do so
+// - I added a favicon just for fun ;) 
+// - I deployed everything on Vercel at: https://beezy.vercel.app/
+//
+// --------------------------------------------------
+
+@import "./../../../node_modules/normalize.css/normalize"; // https://github.com/necolas/normalize.css
+
+@import "variables";
+@import "typography";
+@import "scaffolding";
+
+
+// --------------------------------------------------
+
+
+.header {
+  background-image: linear-gradient(321deg, $sky-blue 0%, $light-navy 46%, $soft-navy 52%, $dark-blue 100%);
+  min-height: 32rem; /* 512px */
+  height: 100vh;
+
+  @media (min-width: 48rem /* 768px */) {
+    background-image: linear-gradient(289deg, $sky-blue 0%, $light-navy 46%, $soft-navy 52%, $dark-blue 100%);
+    height: 47.4375rem; /* 759px */
+  }
+}
+
+.header-content {
+  padding: 2.5rem 1.25rem 3.625rem 1.25rem; /* 40px 20px 58px 20px */
+}
+
+.header__social {
+  display: none;
+
+  @media (min-width: 48rem /* 768px */) {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.header__social-item {
+  display: block;
+  width: 2rem; /* 32px */
+  height: 2rem; /* 32px */
+
+  &+ .header__social-item {
+    margin-left: 0.625rem; /* 10px */
+  }
+}
+
+.header__logo {
+  display: block;
+  width: 8.25rem; /* 132px */
+  height: 2.625rem; /* 42px */
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: 48rem /* 768px */) {
+    margin: 5.625rem 0 0; /* 90px */
+  }
+}
+
+.header__phones-mobile {
+  display: block;
+  margin: 1.625rem auto 0; /* 26px */
+
+  @media (min-width: 48rem /* 768px */) {
+    display: none;
+  }
+}
+
+.header__iphones-final {
+  display: none;
+  
+  @media (min-width: 48rem /* 768px */) {
+    display: block;
+    margin-right: 5.1875rem; /* 83px */
+  }
+
+  @media (min-width: 64rem /* 1024px */) {
+    margin-right: 10.4375rem; /* 167px */
+  }
+}
+
+.header-content-container {
+  max-width: 63.4375rem; /* 1015px (732 [img] + 167 [img right margin] + 116 [text max-width]) */
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: 48rem /* 768px */) {
+    display: flex;
+  }
+}
+
+.header__title {
+  color: $white;
+  text-align: center;
+  font-weight: 200;
+  font-size: 1.5rem; /* 24px */
+  line-height: 1.75rem; /* 28px */
+  margin-top: 1.4375rem; /* 23px */
+  margin-bottom: 0;
+
+  @media (min-width: 48rem /* 768px */) {
+    text-align: left;
+    margin-top: 1.8125rem; /* 29px */
+    font-size: 2rem; /* 32px */
+    line-height: 2.375rem; /* 38px */
+  }
+
+  @media (min-width: 64rem /* 1024px */) {
+    font-size: 3rem; /* 48px */
+    line-height: 3.625rem; /* 58px */
+  }
+}
+
+.header__subtitle {
+  color: $light-gray;
+  text-align: center;
+  font-size: 1rem; /* 16px */
+  line-height: 1.5rem; /* 24px */
+  opacity: 0.7;
+  margin-top: 0.5625rem; /* 9px */
+  margin-bottom: 0;
+
+  @media (min-width: 48rem /* 768px */) {
+    text-align: left;
+    margin-top: 1rem; /* 16px */
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.75rem; /* 28px */
+  }
+
+  @media (min-width: 64rem /* 1024px */) {
+    font-size: 1.5rem; /* 24px */
+    line-height: 2.125rem; /* 34px */
+    margin-top: 1.875rem; /* 30px */
+  }
+}
+
+.input-wrapper {
+  position: relative;
+  margin: 1.625rem auto 0; /* 26px */
+  max-width: 25rem; /* 400px */
+
+  @media (min-width: 48rem /* 768px */) {
+    margin: 1.625rem 0 0; /* 26px */
+  }
+
+  @media (min-width: 64rem /* 1024px */) {
+    margin: 3rem 0 0; /* 48px */
+  }  
+}
+
+.input-wrapper__field {
+  width: 100%;
+  height: 2.8125rem; /* 45px */
+  margin: 0;
+  border: 0;
+  border-radius: 0.5rem; /* 8px */
+  background-color: $white;
+  padding: 0.625rem 9.4375rem 0.6875rem 0.6875rem; /* 10px 151px 11px 11px */
+
+  &::-webkit-input-placeholder {
+    color: $gray;
+  }
+  &::-moz-placeholder {
+    color: $gray;
+  }
+  &:-ms-input-placeholder {
+    color: $gray;
+  }
+  &:-moz-placeholder {
+    color: $gray;
+  }
+}
+
+.input-wrapper__button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: none;
+  background-color: $tomato;
+  color: $white;
+  border-top-right-radius: 0.5rem; /* 8px */
+  border-bottom-right-radius: 0.5rem; /* 8px */
+  font-weight: 700;
+  letter-spacing: 0.175rem; /* 2.8px */
+  text-align: center;
+  text-transform: uppercase;
+  height: 2.8125rem; /* 45px */
+  cursor: pointer;
+  border-color: transparent;
+  padding: 0.75rem 1.375rem; /* 12px 22px */
+}

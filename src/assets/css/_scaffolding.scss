@@ -1,0 +1,38 @@
+//
+// Scaffolding
+// --------------------------------------------------
+
+
+html {
+  box-sizing: border-box;
+}
+
+*, 
+*:before, 
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Segoe', system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  background-color: $white;
+  color: $dark-blue;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+
+// Only display content to screen readers
+// See: https://a11yproject.com/posts/how-to-hide-content
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border-width: 0;
+}

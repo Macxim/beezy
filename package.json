@@ -1,0 +1,36 @@
+{
+  "name": "beezy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.html",
+  "scripts": {
+    "clean": "rm -rf dist .cache .parcel-cache",
+    "build": "parcel build src/index.html --public-url ./",
+    "start": "parcel src/index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/optimizer-cssnano": "2.0.0-nightly.616",
+    "@parcel/optimizer-htmlnano": "2.0.0-nightly.616",
+    "@parcel/packager-css": "2.0.0-nightly.616",
+    "@parcel/packager-html": "2.0.0-nightly.616",
+    "@parcel/transformer-css": "2.0.0-nightly.616",
+    "@parcel/transformer-html": "2.0.0-nightly.616",
+    "@parcel/transformer-postcss": "2.0.0-nightly.616",
+    "@parcel/transformer-posthtml": "2.0.0-nightly.616",
+    "@parcel/transformer-sass": "2.0.0-nightly.616",
+    "autoprefixer": "^10.2.4",
+    "normalize.css": "^8.0.1",
+    "parcel": "^2.0.0-nightly.614",
+    "postcss": "^8.2.1",
+    "sass": "^1.32.8"
+  },
+  "browserslist": [
+    "last 1 Chrome versions",
+    "last 1 Firefox versions",
+    "last 1 Safari versions",
+    "IE 11"
+  ]
+}
